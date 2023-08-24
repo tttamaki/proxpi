@@ -1,0 +1,14 @@
+[Unit]
+Description=proxpi
+
+After=network.target local-fs.target multi-user.target
+Requires=network.target local-fs.target multi-user.target
+
+
+[Service]
+Type=simple
+StandardOutput=journal+console
+ExecStart=/usr/local/bin/proxpi.sh
+
+[Install]
+WantedBy=multi-user.target
